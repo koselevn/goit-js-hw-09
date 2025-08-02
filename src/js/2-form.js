@@ -27,7 +27,7 @@ form.addEventListener('input', (e) => {
     }
 
     localStorage.setItem("feedback-form-state", JSON.stringify(formData))
-    console.log(localStorage.getItem("feedback-form-state"))
+
 })
 
 
