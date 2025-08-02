@@ -29,3 +29,21 @@ form.addEventListener('input', (e) => {
     localStorage.setItem("feedback-form-state", JSON.stringify(formData))
     console.log(localStorage.getItem("feedback-form-state"))
 })
+
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    if (!formData.email.trim() || !formData.message.trim()) {
+        alert("Усі поля мають бути заповнені.");
+        return;
+    }
+
+    console.log("Submitted data:", formData);
+
+    form.reset();
+    localStorage.removeItem("feedback-form-state");
+
+    formData.email = "";
+    formData.message = "";
+});
